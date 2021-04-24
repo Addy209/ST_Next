@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react'; // requires a loader
-import {Box, AspectRatio, Image,Heading,Text  } from '@chakra-ui/react'
+import {Box, AspectRatio, Image,Heading,Text,useMediaQuery  } from '@chakra-ui/react'
 import styles from './header/header.module.css'
 import {Carousel} from 'react-bootstrap'
 
 const MainCarousel =()=>{
+
+  const [isLargerThan500] = useMediaQuery("(max-width: 500px)")
+  console.log(isLargerThan500)
+
+  const [ratio,setRatio]=useState()
+  useEffect(()=>{
+    if(isLargerThan500){
+      setRatio(1)
+    }
+    else{
+      setRatio(2.27)
+    }
+    console.log("test")
+  },[isLargerThan500])
     const data=[
             {
                 image:'./1.jpg',
@@ -21,21 +35,12 @@ const MainCarousel =()=>{
                 subhead:'Example Sub Head 3'
             }
         ]
-
-    const [renderObj,setRenderObj]=useState(data[0])
-    const [index,setIndex]=useState(0)
-
-    setInterval(()=>{
-        const i=(index+1)%3
-        setRenderObj(data[i])
-        setIndex(i)
-    },3000)
     
         return (
             <div id='1' className={styles.car_div}>
             <Carousel>
   <Carousel.Item>
-      <AspectRatio maxW="100%" ratio={20.5 / 9}>
+      <AspectRatio maxW="100%" ratio={ ratio}>
     <img
       className={styles.img}
       src={data[0].image}
@@ -48,7 +53,7 @@ const MainCarousel =()=>{
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-      <AspectRatio maxW="100%" ratio={20.5 / 9}>
+      <AspectRatio maxW="100%" ratio={ ratio}>
     <img
       className={styles.img}
       src={data[1].image}
@@ -61,7 +66,7 @@ const MainCarousel =()=>{
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-      <AspectRatio maxW="100%" ratio={20.5 / 9}>
+      <AspectRatio maxW="100%" ratio={ ratio }>
     <img
       className={styles.img}
       src={data[2].image}

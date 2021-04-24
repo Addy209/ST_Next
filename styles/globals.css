@@ -25,3 +25,33 @@ a {
   padding: 2% 20% 0 20%;
   text-align: justify;
 }
+
+.menu{
+  color: black;
+}
+
+.icon2{
+  font-size: xx-large;
+  margin:11px 11px 0 0;
+  
+  
+}
+
+.contact{
+  position: relative;
+  top:calc((100% - 187px)/2)
+}
+
+.fillform{
+  display:grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 750px){
+.margin_div{
+  text-align: justify;
+  margin: 0;
+  padding: 2% 1% 1% 1%;
+ 
+}
+}

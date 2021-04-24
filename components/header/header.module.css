@@ -63,8 +63,6 @@ font-size:large;
 }
 
 .img{
-    height: 80vh;
-    width:100%;
     object-fit:cover;
     object-position: 50% 40%;
 }

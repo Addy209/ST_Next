@@ -5,6 +5,8 @@ import Header from '../components/header/header'
 import MainCarousel from '../components/carousel'
 import About from '../components/about/about'
 import Portfolio from '../components/Portfolio/portfolio'
+import Contact from '../components/contact/contact'
+import Footer from '../components/footer/footer'
 import {AspectRatio} from '@chakra-ui/react'
 
 
@@ -17,5 +19,7 @@ export default function Home() {
       <MainCarousel />
       <About />
       <Portfolio />
+      <Contact/>
+      <Footer />
       </>   )
 }

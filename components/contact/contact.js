@@ -42,6 +42,7 @@ const Contact=()=>{
     }
 
     const checkandsubmit=(name, email)=>{
+        console.log("name.length")
         if(name=="" || name==null){
             toast({
           title: "Name is Required",
@@ -51,7 +52,19 @@ const Contact=()=>{
         })
         return
         }
+
+        if(name.length<3){
+            toast({
+          title: "We don't accept alphabets as Name",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        })
+        return
+        }
+
         if(email=="" || email==null){
+            
             toast({
           title: "Email is Required",
           status: "error",
@@ -60,6 +73,7 @@ const Contact=()=>{
         })
         return
         }
+
         const e_patt=new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$')
         if(!e_patt.test(email)){
             toast({

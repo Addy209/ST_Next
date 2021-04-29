@@ -1,25 +1,32 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import HeroImage from '../components/carousel'
-import Header from '../components/header/header'
-import MainCarousel from '../components/carousel'
-import About from '../components/about/about'
-import Portfolio from '../components/Portfolio/portfolio'
-import Contact from '../components/contact/contact'
-import Footer from '../components/footer/footer'
-import {AspectRatio} from '@chakra-ui/react'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import HeroImage from "../components/carousel";
+import Header from "../components/header/header";
+import MainCarousel from "../components/carousel";
+import About from "../components/about/about";
+import Portfolio from "../components/Portfolio/portfolio";
+import Contact from "../components/contact/contact";
+import Footer from "../components/footer/footer";
+import Social from "../components/social/social";
+import { AspectRatio } from "@chakra-ui/react";
 
-
-import {Box,Text} from '@chakra-ui/react'
+import { Box, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <>
       <Header />
       <MainCarousel />
-      <About />
+      <div id="about">
+        <About />
+      </div>
       <Portfolio />
-      <Contact/>
+      <div id="contact">
+        <Contact />
+        <Social />
+      </div>
+
       <Footer />
-      </>   )
+    </>
+  );
 }

@@ -25,17 +25,20 @@ const MainCarousel = () => {
   }, [isLargerThan500]);
   const data = [
     {
-      image: "./1.jpg",
+      image:
+        "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       head: "Example Head 1",
       subhead: "Example Sub Head 1",
     },
     {
-      image: "./2.jpg",
+      image:
+        "https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       head: "Example Head 2",
       subhead: "Example Sub Head 2",
     },
     {
-      image: "./4.jpg",
+      image:
+        "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       head: "Example Head 3",
       subhead: "Example Sub Head 3",
     },

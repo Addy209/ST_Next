@@ -9,6 +9,9 @@ import {
 } from "@chakra-ui/react";
 import styles from "./header/header.module.css";
 import { Carousel } from "react-bootstrap";
+import dynamic from "next/dynamic";
+
+const LazyImg = dynamic(() => import("./lazyimg"));
 
 const MainCarousel = () => {
   const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
@@ -58,9 +61,9 @@ const MainCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <AspectRatio maxW="100%" ratio={ratio}>
-            <img
-              className={styles.img}
-              src={data[1].image}
+            <LazyImg
+              style={styles.img}
+              data={data[1].image}
               alt="Second slide"
             />
           </AspectRatio>
@@ -71,7 +74,11 @@ const MainCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <AspectRatio maxW="100%" ratio={ratio}>
-            <img className={styles.img} src={data[2].image} alt="Third slide" />
+            <LazyImg
+              style={styles.img}
+              data={data[2].image}
+              alt="Third slide"
+            />
           </AspectRatio>
           <Carousel.Caption id={styles.caption}>
             <h3>Third slide label</h3>

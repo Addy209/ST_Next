@@ -8,9 +8,9 @@ import Portfolio from "../components/Portfolio/portfolio";
 import Contact from "../components/contact/contact";
 import Footer from "../components/footer/footer";
 import Social from "../components/social/social";
-import { AspectRatio } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 
-import { Box, Text } from "@chakra-ui/react";
+//const MainCarousel = dynamic(() => import("../components/carousel"));
 
 export default function Home() {
   return (

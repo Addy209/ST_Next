@@ -54,7 +54,11 @@ const MainCarousel = () => {
       <Carousel>
         <Carousel.Item>
           <AspectRatio maxW="100%" ratio={ratio}>
-            <img className={styles.img} src={data[0].image} alt="First slide" />
+            <LazyImg
+              style={styles.img}
+              data={data[0].image}
+              alt="First slide"
+            />
           </AspectRatio>
           <Carousel.Caption id={styles.caption}>
             <h3>First slide label</h3>

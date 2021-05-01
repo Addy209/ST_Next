@@ -1,0 +1,1 @@
+(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[19],{YXKw:function(t,a,n){"use strict";n.r(a);var s=n("nKUr"),c=(n("q1tI"),n("Aiso")),e=n.n(c);a.default=function(t){return Object(s.jsx)(e.a,{className:t.style,layout:"fill",src:t.data,alt:t.alt})}}}]);

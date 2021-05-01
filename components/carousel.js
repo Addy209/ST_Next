@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"; // requires a loader
 import {
   Box,
   AspectRatio,
+  Image,
   Heading,
   Text,
   useMediaQuery,
@@ -9,7 +10,6 @@ import {
 import styles from "./header/header.module.css";
 import { Carousel } from "react-bootstrap";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 
 const LazyImg = dynamic(() => import("./lazyimg"));
 
@@ -28,17 +28,22 @@ const MainCarousel = () => {
   }, [isLargerThan500]);
   const data = [
     {
-      image: "/5.jpg",
-      head: "Example Head 1",
-      subhead: "Example Sub Head 1",
-    },
-    {
-      image: "/6.jpg",
+      image:
+        "https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       head: "Example Head 2",
       subhead: "Example Sub Head 2",
     },
+
     {
-      image: "/7.jpg",
+      image:
+        "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      head: "Example Head 1",
+      subhead: "Example Sub Head 1",
+    },
+
+    {
+      image:
+        "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       head: "Example Head 3",
       subhead: "Example Sub Head 3",
     },
@@ -49,11 +54,7 @@ const MainCarousel = () => {
       <Carousel>
         <Carousel.Item>
           <AspectRatio maxW="100%" ratio={ratio}>
-            <LazyImg
-              style={styles.img}
-              data={data[0].image}
-              alt="First slide"
-            />
+            <img className={styles.img} src={data[0].image} alt="First slide" />
           </AspectRatio>
           <Carousel.Caption id={styles.caption}>
             <h3>First slide label</h3>

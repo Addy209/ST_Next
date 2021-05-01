@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"; // requires a loader
 import {
   Box,
   AspectRatio,
-  Image,
   Heading,
   Text,
   useMediaQuery,
@@ -10,6 +9,7 @@ import {
 import styles from "./header/header.module.css";
 import { Carousel } from "react-bootstrap";
 import dynamic from "next/dynamic";
+import Image from 'next/image'
 
 const LazyImg = dynamic(() => import("./lazyimg"));
 
@@ -52,7 +52,7 @@ const MainCarousel = () => {
       <Carousel>
         <Carousel.Item>
           <AspectRatio maxW="100%" ratio={ratio}>
-            <img className={styles.img} src={data[0].image} alt="First slide" />
+            <Image className={styles.img} layout="fill" src={data[0].image} alt="First slide" />
           </AspectRatio>
           <Carousel.Caption id={styles.caption}>
             <h3>First slide label</h3>

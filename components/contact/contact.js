@@ -17,6 +17,8 @@ import { SiMinutemailer } from "react-icons/si";
 import { useToast, Progress } from "@chakra-ui/react";
 import { Alert, AlertIcon } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Maps = dynamic(() => import("./map"), { loading: () => <p>...</p> });
 
@@ -158,6 +160,15 @@ const Contact = () => {
     </>
   );
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in",
+      anchorPlacement: "top-bottom",
+    });
+  }, []);
+
   useEffect(async () => {
     if (duration == 100) {
       if (loading) {
@@ -185,6 +196,8 @@ const Contact = () => {
         size="2xl"
         bgGradient="linear(to-r,#7928CA, #FF0080)"
         bgClip="text"
+        data-aos="zoom-in"
+        data-aos-anchor-placement="top-bottom"
       >
         Contact Us
       </Heading>

@@ -10,6 +10,7 @@ import {
 import styles from "./header/header.module.css";
 import { Carousel } from "react-bootstrap";
 import dynamic from "next/dynamic";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const LazyImg = dynamic(() => import("./lazyimg"));
 

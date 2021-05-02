@@ -9,19 +9,27 @@ import Contact from "../components/contact/contact";
 import Footer from "../components/footer/footer";
 import Social from "../components/social/social";
 import dynamic from "next/dynamic";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 //const MainCarousel = dynamic(() => import("../components/carousel"));
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <>
       <Header />
       <MainCarousel />
-      <div id="about">
+      <div data-aos="fade-right" id="about">
         <About />
       </div>
-      <Portfolio />
-      <div id="contact">
+      <div data-aos="fade-left">
+        <Portfolio />
+      </div>
+      <div data-aos="fade-right" id="contact">
         <Contact />
         <Social />
       </div>
